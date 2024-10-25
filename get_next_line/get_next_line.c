@@ -12,23 +12,27 @@
 
 #include "get_next_line.h"
 
-static char *clear_buffer(t_buffer *bs);
-static void set_buffer(size_t *j, int fd, t_buffer *bs);
+static char	*clear_buffer(t_buffer *bs);
+static void	set_buffer(size_t *j, int fd, t_buffer *bs);
 static int	process_buffer_loop(char **line, t_buffer *bs, size_t *j, int fd);
 static int	check_errors(t_buffer *bs, char **line);
 
 // Gets the next line in fd after successive calls. Reads specified buffer size.
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	static t_buffer bufferstruct;
-	size_t j;
-	char *line;
+	static t_buffer	bufferstruct;
+	size_t				j;
+	char					*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
 		return (clear_buffer(&bufferstruct));
 	line = NULL;
 	if (!bufferstruct.buffer)
+	{
 		set_buffer(&j, fd, &bufferstruct);
+		if (!bufferstruct.buffer)
+			return (clear_buffer(&bufferstruct));
+	}
 	else
 		j = bufferstruct.i;
 	while (bufferstruct.bytes_read > 0)
@@ -71,6 +75,8 @@ static int	process_buffer_loop(char **line, t_buffer *bs, size_t *j, int fd)
 	while (bs->i < bs->bytes_read && bs->buffer[bs->i] != '\n')
 		bs->i++;
 	*line = join_range(*line, bs->buffer, *j, bs->i);
+	if (!*line)
+		return (1);
 	if (bs->i < bs->bytes_read && bs->buffer[bs->i] == '\n')
 	{
 		*line = join_range(*line, bs->buffer, bs->i, bs->i + 1);
@@ -92,17 +98,11 @@ static int	process_buffer_loop(char **line, t_buffer *bs, size_t *j, int fd)
 // Check if there was an error and return NULL if so.
 static int	check_errors(t_buffer *bs, char **line)
 {
-	if (bs->bytes_read == (unsigned long)-1)
+	if (bs->bytes_read == (unsigned long)-1
+		|| (*line && ft_strlen(*line) == 0) || !*line)
 	{
 		free(*line);
 		*line = NULL;
-		clear_buffer(bs);
-		bs->i = 0;
-		return (1);
-	}
-	if (*line && ft_strlen(*line) == 0)
-	{
-		free(*line);
 		clear_buffer(bs);
 		bs->i = 0;
 		return (1);
@@ -112,15 +112,13 @@ static int	check_errors(t_buffer *bs, char **line)
 
 // int	main(void)
 // {
-// 	int	fd;
-// 	fd = open("test.txt", O_RDONLY);
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s", get_next_line(fd));
-// 	printf("%s \n", get_next_line(fd));
+// 	int fd = open("test.txt", O_RDONLY);
+// 	char	*line;
+// 	while((line = get_next_line(fd)) != 0)
+// 	{
+// 		printf("%s", line);
+// 		free(line);
+// 	}
+// 	printf("\n");
 // 	return (0);
 // }

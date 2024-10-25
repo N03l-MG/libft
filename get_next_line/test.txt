@@ -1,7 +1,0 @@
-This is a test.
-By calling the function multiple times it is able to
-get the next line.
-And using static the buffer is remembered by memory to
-know where it left off. Here is an empty line:
-
-And now this is the end. An extra call gives null...

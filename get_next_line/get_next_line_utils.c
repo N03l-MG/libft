@@ -55,11 +55,29 @@ char	*join_range(char *s1, char *s2, size_t start, size_t end)
 	if (!s_joined)
 	{
 		free(s1);
+		s1 = NULL;
 		return (NULL);
 	}
 	s_joined[0] = '\0';
 	cat_range(s_joined, s1, 0, ft_strlen(s1));
 	cat_range(s_joined, s2, start, end);
 	free(s1);
+	s1 = NULL;
 	return (s_joined);
 }
+
+// size_t	ft_strcpy(char *dst, const char *src)
+// {
+// 	size_t	i;
+// 	size_t	src_len;
+
+// 	src_len = ft_strlen(src);
+// 	i = 0;
+// 	while (src[i] != '\0')
+// 	{
+// 		dst[i] = src[i];
+// 		i++;
+// 	}
+// 	dst[i] = '\0';
+// 	return (src_len);
+// }
