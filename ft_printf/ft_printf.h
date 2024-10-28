@@ -6,15 +6,13 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 11:00:30 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:28:36 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/10/28 11:42:25 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 # include "../libft.h"
-# include <stdarg.h>
-# include <stdint.h>
 
 void	handle_character(int c, int *retval);
 void	handle_string(char *s, int *retval);

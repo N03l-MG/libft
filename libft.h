@@ -6,15 +6,19 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:48:54 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:27:35 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/10/28 11:45:09 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <limits.h>
+# include <stdlib.h> // malloc and free
+# include <unistd.h> // read and write
+# include <limits.h> // MIN_INT and other constants
+# include <stdarg.h> // Variadic functions
+# include <stdint.h> // Useful numeric types 
+# include <fcntl.h> // File descriptor read flags
+//# include <stdio.h> // For testing, disabled
 
 // Linked List Node
 typedef struct s_list

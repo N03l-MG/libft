@@ -6,22 +6,11 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 10:27:40 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:00:47 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/10/28 11:48:10 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-// Get string length
-size_t	ft_strlen(const char *s)
-{
-	size_t	l;
-
-	l = 0;
-	while (s[l] != '\0')
-		l++;
-	return (l);
-}
 
 // Concatenate two strings for a specific range
 static char	*cat_range(char *dest, char *src, size_t start, size_t end)
