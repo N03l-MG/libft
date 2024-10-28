@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 10:27:40 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/22 15:06:47 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/10/28 11:00:47 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,19 +65,3 @@ char	*join_range(char *s1, char *s2, size_t start, size_t end)
 	s1 = NULL;
 	return (s_joined);
 }
-
-// size_t	ft_strcpy(char *dst, const char *src)
-// {
-// 	size_t	i;
-// 	size_t	src_len;
-
-// 	src_len = ft_strlen(src);
-// 	i = 0;
-// 	while (src[i] != '\0')
-// 	{
-// 		dst[i] = src[i];
-// 		i++;
-// 	}
-// 	dst[i] = '\0';
-// 	return (src_len);
-// }

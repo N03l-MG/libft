@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 10:27:24 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:28:22 by nmonzon          ###   ########.fr       */
+/*   Created: 2024/10/08 12:02:50 by nmonzon           #+#    #+#             */
+/*   Updated: 2024/10/28 11:32:19 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "../libft.h"
-// # include <stdio.h>
-// # include <fcntl.h>
+#include "../libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+// Identical to iteri but returns the string after the function is applied to it
 
-typedef struct s_buffer
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	bytes_read;
-	char	*buffer;
 	size_t	i;
-}	t_buffer;
+	char	*s_processed;
 
-size_t	ft_strlen(const char *s);
-char	*join_range(char *s1, char *s2, size_t start, size_t end);
-
-#endif
+	i = 0;
+	s_processed = (char *)malloc(ft_strlen(s) + 1);
+	if (!s_processed)
+		return (NULL);
+	while (s[i])
+	{
+		s_processed[i] = f(i, s[i]);
+		i++;
+	}
+	s_processed[i] = '\0';
+	return (s_processed);
+}

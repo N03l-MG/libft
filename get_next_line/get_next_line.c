@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 10:27:08 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/22 16:39:52 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/10/28 11:00:58 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	check_errors(t_buffer *bs, char **line);
 char	*get_next_line(int fd)
 {
 	static t_buffer	bufferstruct;
-	size_t				j;
-	char					*line;
+	size_t			j;
+	char			*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
 		return (clear_buffer(&bufferstruct));

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 10:27:24 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:28:22 by nmonzon          ###   ########.fr       */
+/*   Created: 2024/10/18 12:37:15 by nmonzon           #+#    #+#             */
+/*   Updated: 2024/10/28 11:30:09 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "../libft.h"
-// # include <stdio.h>
-// # include <fcntl.h>
+#include "../libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
-
-typedef struct s_buffer
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	bytes_read;
-	char	*buffer;
-	size_t	i;
-}	t_buffer;
+	t_list	*temp;
 
-size_t	ft_strlen(const char *s);
-char	*join_range(char *s1, char *s2, size_t start, size_t end);
-
-#endif
+	while (*lst)
+	{
+		del((*lst)->content);
+		temp = (*lst)->next;
+		free (*lst);
+		*lst = temp;
+	}
+	*lst = NULL;
+}

@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 10:27:24 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:28:22 by nmonzon          ###   ########.fr       */
+/*   Created: 2024/10/08 12:01:45 by nmonzon           #+#    #+#             */
+/*   Updated: 2024/10/28 11:31:19 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "../libft.h"
-// # include <stdio.h>
-// # include <fcntl.h>
+#include "../libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+// Recursion based function similar to itoa. Deal with each digit recursively.
+// Passing file descriptor into write.
 
-typedef struct s_buffer
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	bytes_read;
-	char	*buffer;
-	size_t	i;
-}	t_buffer;
+	char	c;
 
-size_t	ft_strlen(const char *s);
-char	*join_range(char *s1, char *s2, size_t start, size_t end);
-
-#endif
+	if (n == INT_MIN)
+	{
+		write(fd, "-2147483648", 11);
+	}
+	else
+	{
+		if (n < 0)
+		{
+			write(fd, "-", 1);
+			n *= -1;
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+		}
+		c = n % 10 + '0';
+		write(fd, &c, 1);
+	}
+}

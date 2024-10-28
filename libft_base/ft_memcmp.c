@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 10:27:24 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:28:22 by nmonzon          ###   ########.fr       */
+/*   Created: 2024/10/08 12:01:00 by nmonzon           #+#    #+#             */
+/*   Updated: 2024/10/28 11:30:49 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "../libft.h"
-// # include <stdio.h>
-// # include <fcntl.h>
+#include "../libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+// Returns the difference in ascii between two given points in memory.
 
-typedef struct s_buffer
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	bytes_read;
-	char	*buffer;
-	size_t	i;
-}	t_buffer;
+	size_t				i;
+	const unsigned char	*p1;
+	const unsigned char	*p2;
 
-size_t	ft_strlen(const char *s);
-char	*join_range(char *s1, char *s2, size_t start, size_t end);
-
-#endif
+	i = 0;
+	p1 = (const unsigned char *)s1;
+	p2 = (const unsigned char *)s2;
+	while (i < n)
+	{
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
+	}
+	return (0);
+}

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/21 10:27:24 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:28:22 by nmonzon          ###   ########.fr       */
+/*   Created: 2024/10/08 12:01:35 by nmonzon           #+#    #+#             */
+/*   Updated: 2024/10/28 11:31:14 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include "../libft.h"
-// # include <stdio.h>
-// # include <fcntl.h>
+#include "../libft.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
-# endif
+// Identical to putstr but adding a new line.
+// Passing file descriptor into write.
 
-typedef struct s_buffer
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	bytes_read;
-	char	*buffer;
-	size_t	i;
-}	t_buffer;
+	int	i;
 
-size_t	ft_strlen(const char *s);
-char	*join_range(char *s1, char *s2, size_t start, size_t end);
-
-#endif
+	i = 0;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
+	write(fd, "\n", 1);
+}
