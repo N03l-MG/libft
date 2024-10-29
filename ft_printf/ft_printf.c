@@ -79,17 +79,3 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (retval);
 }
-
-// int main() {
-// 	void *ptr;
-// 	char *test = "hello %d%c %s%%. I'm from %p, also known as %X\nokay... %u\n";
-// 	int result = 0;
-
-// 	result = ft_printf(test, 42, '!', "100", ptr, -42, -21);
-// 	ft_printf("%i\n", result);
-
-// 	result = printf(test, 42, '!', "100", ptr, -42, -21);
-// 	printf("%i\n", result);
-
-// 	return 0;
-// }

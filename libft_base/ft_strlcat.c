@@ -37,12 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (dst_len + src_len);
 }
-
-// #include <stdio.h>
-// int	main()
-// {
-// 	int		n = 6;
-// 	char	str1[] = "epic";
-// 	char	str2[] = "gaming";
-// 	printf("%d\n", ft_strlcat(str1, str2, n));
-// }

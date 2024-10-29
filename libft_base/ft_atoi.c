@@ -41,8 +41,3 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * result);
 }
-
-// int main()
-// {
-// 	printf("%d", ft_atoi("\e06050"));
-// }

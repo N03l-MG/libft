@@ -109,16 +109,3 @@ static int	check_errors(t_buffer *bs, char **line)
 	}
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	int fd = open("test.txt", O_RDONLY);
-// 	char	*line;
-// 	while((line = get_next_line(fd)) != 0)
-// 	{
-// 		printf("%s", line);
-// 		free(line);
-// 	}
-// 	printf("\n");
-// 	return (0);
-// }

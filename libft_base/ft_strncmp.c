@@ -30,20 +30,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-/*
-int	main(void)
-{
-	char	*str1;
-	char	*str2;
-	int		length;
-	int		r;
-
-	str1 = "ABCDEF";
-	str2 = "abcdef";
-	length = 8;
-	r = ft_strncmp(str1, str2, length);
-	printf("%d", r);
-	return (0);
-}
-*/

@@ -105,22 +105,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (populate_array(s, c, split_strings));
 }
-
-// Test Main
-// int main() { // norm not applied!
-// 	char **result = ft_split("skibidi|gyatt||ohio|rizz|\0|", '|');
-
-// 	if (result == NULL) {
-// 		printf("Split failed\n");
-// 		return 1;
-// 	}
-
-// 	for (int i = 0; result[i] != NULL; i++) {
-// 		printf("%s\n", result[i]);
-// 		free(result[i]);
-// 	}
-
-// 	free(result);
-
-// 	return 0;
-// }

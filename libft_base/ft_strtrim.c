@@ -87,8 +87,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(trimmed_s, &s1[start], l + 1);
 	return (trimmed_s);
 }
-
-// int main() {
-// 	printf("%s", ft_strtrim("aabcbaccbaunabstractedabbcbaabacc", "abc"));
-// 	return 0;
-// }

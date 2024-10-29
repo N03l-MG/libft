@@ -42,16 +42,3 @@ char	*ft_strdup(const char *s1)
 	ft_strcpy(dup, s1);
 	return (dup);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	char	*str;
-	char	*dupe;
-
-	str = "test string!\n";
-	dupe = ft_strdup(str);
-	printf("%s", dupe);
-	free(dupe);
-}
-*/

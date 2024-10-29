@@ -18,7 +18,8 @@
 # include <stdarg.h> // Variadic functions
 # include <stdint.h> // Useful numeric types 
 # include <fcntl.h> // File descriptor read flags
-//# include <stdio.h> // For testing, disabled
+# include <stdbool.h> // Boolean type and true/false
+//# include <stdio.h> // For testing - disabled
 
 // Linked List Node
 typedef struct s_list
