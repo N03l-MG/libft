@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-void	handle_character(int c, int *retval)
+void	handle_character(int fd, int c, int *retval)
 {
-	if (write(1, &c, 1) == -1)
+	if (write(fd, &c, 1) == -1)
 	{
 		*retval = -1;
 		return ;

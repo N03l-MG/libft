@@ -76,7 +76,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // ft_printf Implementation
-int		ft_printf(const char *str, ...);
+int		ft_fprintf(int fd, const char *str, ...);
 // get_next_line Implementation
 char	*get_next_line(int fd);
 

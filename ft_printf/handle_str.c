@@ -12,11 +12,11 @@
 
 #include "ft_printf.h"
 
-void	handle_string(char *str, int *retval)
+void	handle_string(int fd, char *str, int *retval)
 {
 	if (!str)
 	{
-		if (write(1, "(null)", 6) == -1)
+		if (write(fd, "(null)", 6) == -1)
 		{
 			*retval = -1;
 			return ;
@@ -26,7 +26,7 @@ void	handle_string(char *str, int *retval)
 	}
 	while (*str)
 	{
-		if (write(1, str, 1) == -1)
+		if (write(fd, str, 1) == -1)
 		{
 			*retval = -1;
 			return ;

@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static void	write_and_check(char *s, int *retval, int length)
+static void	write_and_check(int fd, char *s, int *retval, int length)
 {
-	if (write(1, s, length) == -1)
+	if (write(fd, s, length) == -1)
 	{
 		*retval = -1;
 		return ;
@@ -36,14 +36,14 @@ static char	*hex_to_upper(char *s)
 	return (s);
 }
 
-void	handle_hex_lower(unsigned int hexl, int *retval)
+void	handle_hex_lower(int fd, unsigned int hexl, int *retval)
 {
 	char	*hex_string;
 	int		length;
 
 	if (hexl == 0)
 	{
-		write_and_check("0", retval, 1);
+		write_and_check(fd, "0", retval, 1);
 		return ;
 	}
 	hex_string = hex_to_string(hexl);
@@ -53,18 +53,18 @@ void	handle_hex_lower(unsigned int hexl, int *retval)
 		return ;
 	}
 	length = ft_strlen(hex_string);
-	write_and_check(hex_string, retval, length);
+	write_and_check(fd, hex_string, retval, length);
 	free(hex_string);
 }
 
-void	handle_hex_upper(unsigned int hexu, int *retval)
+void	handle_hex_upper(int fd, unsigned int hexu, int *retval)
 {
 	char	*hex_string;
 	int		length;
 
 	if (hexu == 0)
 	{
-		write_and_check("0", retval, 1);
+		write_and_check(fd, "0", retval, 1);
 		return ;
 	}
 	hex_string = hex_to_string(hexu);
@@ -75,6 +75,6 @@ void	handle_hex_upper(unsigned int hexu, int *retval)
 	}
 	hex_string = hex_to_upper(hex_string);
 	length = ft_strlen(hex_string);
-	write_and_check(hex_string, retval, length);
+	write_and_check(fd, hex_string, retval, length);
 	free(hex_string);
 }

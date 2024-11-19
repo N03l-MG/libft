@@ -14,13 +14,13 @@
 # define FT_PRINTF_H
 # include "../libft.h"
 
-void	handle_character(int c, int *retval);
-void	handle_string(char *s, int *retval);
-void	handle_pointer(void *p, int *retval);
-void	handle_integer(int n, int *retval);
-void	handle_unsigned_decimal(int ud, int *retval);
-void	handle_hex_lower(unsigned int hexl, int *retval);
-void	handle_hex_upper(unsigned int hexu, int *retval);
+void	handle_character(int fd, int c, int *retval);
+void	handle_string(int fd, char *s, int *retval);
+void	handle_pointer(int fd, void *p, int *retval);
+void	handle_integer(int fd, int n, int *retval);
+void	handle_unsigned_decimal(int fd, int ud, int *retval);
+void	handle_hex_lower(int fd, unsigned int hexl, int *retval);
+void	handle_hex_upper(int fd, unsigned int hexu, int *retval);
 
 char	*hex_to_string(unsigned int address);
 char	*address_to_string(uintptr_t address);

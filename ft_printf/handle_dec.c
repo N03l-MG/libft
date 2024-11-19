@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static void	write_and_check(char *s, int *retval, int length)
+static void	write_and_check(int fd, char *s, int *retval, int length)
 {
-	if (write(1, s, length) == -1)
+	if (write(fd, s, length) == -1)
 	{
 		*retval = -1;
 		return ;
@@ -49,7 +49,7 @@ static char	*itoa_unsigned(unsigned int n)
 	return (s);
 }
 
-void	handle_unsigned_decimal(int ud, int *retval)
+void	handle_unsigned_decimal(int fd, int ud, int *retval)
 {
 	char			*str;
 	unsigned int	un_d;
@@ -61,6 +61,6 @@ void	handle_unsigned_decimal(int ud, int *retval)
 		(*retval) = -1;
 		return ;
 	}
-	write_and_check(str, retval, ft_strlen(str));
+	write_and_check(fd, str, retval, ft_strlen(str));
 	free(str);
 }

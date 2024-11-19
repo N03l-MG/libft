@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static void	write_and_check(char *s, int *retval, int length)
+static void	write_and_check(int fd, char *s, int *retval, int length)
 {
-	if (write(1, s, length) == -1)
+	if (write(fd, s, length) == -1)
 	{
 		*retval = -1;
 		return ;
@@ -22,18 +22,18 @@ static void	write_and_check(char *s, int *retval, int length)
 	*retval += length;
 }
 
-void	handle_pointer(void *p, int *retval)
+void	handle_pointer(int fd, void *p, int *retval)
 {
 	uintptr_t	address;
 	char		*hex_address;
 	int			length;
 
-	write_and_check("0x", retval, 2);
+	write_and_check(fd, "0x", retval, 2);
 	if (*retval == -1)
 		return ;
 	if (!p)
 	{
-		write_and_check("0", retval, 1);
+		write_and_check(fd, "0", retval, 1);
 		return ;
 	}
 	address = (uintptr_t)p;
@@ -44,6 +44,6 @@ void	handle_pointer(void *p, int *retval)
 		return ;
 	}
 	length = ft_strlen(hex_address);
-	write_and_check(hex_address, retval, length);
+	write_and_check(fd, hex_address, retval, length);
 	free(hex_address);
 }
