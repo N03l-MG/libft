@@ -50,7 +50,7 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) *.a
 
 fclean: clean
 	rm -f $(NAME)
