@@ -59,6 +59,10 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 	- ft_lstiter
 	- ft_lstmap
 - Various utils:
+	- ft_putchar_fd
+ 	- ft_putstr_fd
+ 	- ft_putendl_fd
+	- ft_putnbr_fd	
 	- ft_fprintf (printf with given file descriptor)
 	- get_next_line
 
