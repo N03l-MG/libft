@@ -1,6 +1,24 @@
-.vscode
-.DS_Store
+
+####### GITIGNORE for 42 by nmonzon #######
+
+# Objects
 *.o
-*.out
+*.d
+*.obj
+
+# Libraries
 *.a
+*.lib
+
+# Folders
+.vs_code/
 tests/
+
+# MAC Finder
+.DS_Store
+
+# Subject PDF
+*.subject.pdf
+
+# Executables
+*.out

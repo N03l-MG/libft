@@ -1,6 +1,24 @@
+################################################################################
+#                                                                              #
+#                                    MAKEFILE                                  #
+# Project:     libft/ft_printf/get_next_line                                   #
+# Created:     07/10/2024                                                      #
+# Author:      Noel Monzon (nmonzon)                                           #
+#                                                                              #
+################################################################################
+
+################################################################################
+###############                     BUILD SETUP                  ###############
+################################################################################
+
 NAME = libft.a
-CC = gcc
+CC = cc
 FLAGS = -Wall -Wextra -Werror
+
+################################################################################
+###############                    SOURCE FILES                  ###############
+################################################################################
+
 SOURCE = libft_base/ft_atoi.c libft_base/ft_bzero.c libft_base/ft_calloc.c libft_base/ft_isalnum.c \
 		 libft_base/ft_isalpha.c libft_base/ft_isascii.c libft_base/ft_isdigit.c libft_base/ft_isprint.c \
 		 libft_base/ft_itoa.c libft_base/ft_lstadd_back_bonus.c libft_base/ft_lstadd_front_bonus.c \
@@ -18,6 +36,10 @@ SOURCE = libft_base/ft_atoi.c libft_base/ft_bzero.c libft_base/ft_calloc.c libft
 		 ft_printf/hex_functions.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
 OBJ = $(SOURCE:.c=.o)
+
+################################################################################
+###############                 COMPILATION RULES                ###############
+################################################################################
 
 all: $(NAME)
 
