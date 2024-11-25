@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:01:55 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:31:31 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 14:56:54 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static char	**populate_array(char const *s, char c, char **split_strings)
 	return (split_strings);
 }
 
-// the real deal, calls every funtion and returns final array
+// Split string s into an array of strings based on the delimiter c
 char	**ft_split(char const *s, char c)
 {
 	char		**split_strings;

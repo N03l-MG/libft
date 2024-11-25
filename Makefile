@@ -13,29 +13,52 @@
 
 NAME = libft.a
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -Iinclude
+
+################################################################################
+###############                     DIRECTORIES                  ###############
+################################################################################
+
+SRC_DIR = src
+BOOL_DIR = $(SRC_DIR)/booleans
+CONV_DIR = $(SRC_DIR)/conversion
+MEM_DIR = $(SRC_DIR)/memory
+STR_DIR = $(SRC_DIR)/strings
+LIST_DIR = $(SRC_DIR)/linked_lists_bonus
+UTIL_DIR = $(SRC_DIR)/utils
+PRINT_DIR = $(SRC_DIR)/ft_fprintf
+GNL_DIR = $(SRC_DIR)/get_next_line
 
 ################################################################################
 ###############                    SOURCE FILES                  ###############
 ################################################################################
 
-SOURCE = libft_base/ft_atoi.c libft_base/ft_bzero.c libft_base/ft_calloc.c libft_base/ft_isalnum.c \
-		 libft_base/ft_isalpha.c libft_base/ft_isascii.c libft_base/ft_isdigit.c libft_base/ft_isprint.c \
-		 libft_base/ft_itoa.c libft_base/ft_lstadd_back_bonus.c libft_base/ft_lstadd_front_bonus.c \
-		 libft_base/ft_lstclear_bonus.c libft_base/ft_lstdelone_bonus.c libft_base/ft_lstiter_bonus.c \
-		 libft_base/ft_lstlast_bonus.c libft_base/ft_lstmap_bonus.c libft_base/ft_lstnew_bonus.c \
-		 libft_base/ft_lstsize_bonus.c libft_base/ft_memchr.c libft_base/ft_memcmp.c libft_base/ft_memcpy.c \
-		 libft_base/ft_memmove.c libft_base/ft_memset.c libft_base/ft_putchar_fd.c libft_base/ft_putendl_fd.c \
-		 libft_base/ft_putnbr_fd.c libft_base/ft_putstr_fd.c libft_base/ft_split.c libft_base/ft_strchr.c \
-		 libft_base/ft_strdup.c libft_base/ft_striteri.c libft_base/ft_strjoin.c libft_base/ft_strlcat.c \
-		 libft_base/ft_strlcpy.c libft_base/ft_strlen.c libft_base/ft_strmapi.c libft_base/ft_strncmp.c \
-		 libft_base/ft_strnstr.c libft_base/ft_strrchr.c libft_base/ft_strtrim.c libft_base/ft_substr.c \
-		 libft_base/ft_tolower.c libft_base/ft_toupper.c \
-		 ft_printf/ft_printf.c ft_printf/handle_char.c ft_printf/handle_dec.c \
-		 ft_printf/handle_hex.c ft_printf/handle_int.c ft_printf/handle_point.c ft_printf/handle_str.c \
-		 ft_printf/hex_functions.c get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
+BOOL_SRC = 
+CONV_SRC = 
+MEM_SRC = 
+STR_SRC = 
+LIST_SRC = 
+UTIL_SRC = 
+PRINT_SRC = 
+GNL_SRC = 
 
-OBJ = $(SOURCE:.c=.o)
+BOOL_SRC := $(addprefix $(BOOL_DIR)/, $(BOOL_SRC))
+CONV_SRC := $(addprefix $(CONV_DIR)/, $(CONV_SRC))
+MEM_SRC := $(addprefix $(MEM_DIR)/, $(MEM_SRC))
+STR_SRC := $(addprefix $(STR_DIR)/, $(STR_SRC))
+LIST_SRC := $(addprefix $(LIST_DIR)/, $(LIST_SRC))
+UTIL_SRC := $(addprefix $(UTIL_DIR)/, $(UTIL_SRC))
+PRINT_SRC := $(addprefix $(PRINT_DIR)/, $(PRINT_SRC))
+GNL_SRC := $(addprefix $(GNL_DIR)/, $(GNL_SRC))
+
+BOOL_OBJ    = $(BOOL_SRC:.c=.o)
+CONV_OBJ    = $(CONV_SRC:.c=.o)
+MEM_OBJ     = $(MEM_SRC:.c=.o)
+STR_OBJ     = $(STR_SRC:.c=.o)
+LIST_OBJ    = $(LIST_SRC:.c=.o)
+UTIL_OBJ    = $(UTIL_SRC:.c=.o)
+PRINT_OBJ   = $(PRINT_SRC:.c=.o)
+GNL_OBJ     = $(GNL_SRC:.c=.o)
 
 ################################################################################
 ###############                 COMPILATION RULES                ###############
