@@ -66,22 +66,29 @@ ALL_OBJ = $(ALL_SRC:.c=.o)
 ###############                 COMPILATION RULES                ###############
 ################################################################################
 
-all: $(NAME)
+all: message $(NAME)
+
+message:
+	@echo "Compiling libft..."
 
 $(NAME): $(ALL_OBJ)
-	ar rc $(NAME) $(ALL_OBJ)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(ALL_OBJ)
+	@ranlib $(NAME)
+	@echo "libft compiled successfully!"
 
 %.o: %.c
 	@mkdir -p $(dir $@)
-	$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -f $(ALL_OBJ)
+	@echo "Cleaning library object files..."
+	@rm -f $(ALL_OBJ)
+	@echo "Object files cleaned!"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Removed $(NAME)"
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all message clean fclean re
