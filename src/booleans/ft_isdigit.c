@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:59:36 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:29:41 by nmonzon          ###   ########.fr       */
+/*   Created: 2024/10/08 11:59:53 by nmonzon           #+#    #+#             */
+/*   Updated: 2024/11/25 14:46:22 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-// Checks if c is a valid ascii value
+// Checks if c is within the ascii range digits
 
-int	ft_isascii(int c)
+bool	ft_isdigit(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c == '\0')
+		return (0);
+	if (c >= 48 && c <= 57)
 	{
 		return (1);
 	}
