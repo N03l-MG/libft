@@ -6,11 +6,11 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:01:00 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:30:49 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:43:32 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 // Returns the difference in ascii between two given points in memory.
 

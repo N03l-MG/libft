@@ -6,11 +6,11 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:00:01 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/11/25 14:46:22 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:43:32 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 // Checks if c is within the ascii range of printable charaters
 

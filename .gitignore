@@ -11,7 +11,7 @@
 *.lib
 
 # Folders
-.vs_code/
+.vscode/
 tests/
 
 # MAC Finder

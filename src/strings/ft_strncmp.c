@@ -6,11 +6,11 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:02:55 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:32:24 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:43:32 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 // Returns the differnce in ascii between the first differing charater
 // of s and s2, up until the point n.

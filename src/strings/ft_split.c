@@ -6,11 +6,11 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:01:55 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/11/25 14:56:54 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:43:32 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 // First we count the ammout of times we encounter a delimiter without
 // counting consecutive ones, to know how many elements our final array has.

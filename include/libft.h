@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:48:54 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/11/25 14:45:18 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:47:02 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdint.h> // Useful numeric types 
 # include <fcntl.h> // File descriptor read flags
 # include <stdbool.h> // Boolean type and true/false
+# include <math.h> // math functions when allowed
 //# include <stdio.h> // For testing - manually enable!
 
 // Linked list node

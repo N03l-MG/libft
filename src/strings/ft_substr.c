@@ -6,11 +6,11 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 12:03:17 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:32:45 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:43:32 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 // Copies a specified substring from a string into a new one with strdup.
 // Accounts for start position being beyond srting and len being out of bounds.

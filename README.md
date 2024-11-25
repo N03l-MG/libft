@@ -12,6 +12,7 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 - stdbool
 - limits
 - fcntl
+- math
 
 **Functions:**
 - Memory manipulation:
@@ -34,15 +35,13 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 	- ft_strjoin
 	- ft_strncmp
 	- ft_strlen
-- String parsing:
 	- ft_split
 	- ft_striteri
 	- ft_strmapi
+- Conversion functions:
 	- ft_atoi
 	- ft_itoa
-- Character manipulation:
-	- ft_tolower
-	- ft_toupper
+	- ft_atof
 - Character booleans:
 	- ft_isalnum
 	- ft_isalpha
@@ -62,9 +61,11 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 	- ft_putchar_fd
  	- ft_putstr_fd
  	- ft_putendl_fd
-	- ft_putnbr_fd	
+	- ft_putnbr_fd
+	- ft_tolower
+	- ft_toupper
 	- ft_fprintf (printf with given file descriptor)
 	- get_next_line
 
-**Structs:**
+**Structs and Enums:**
 - Linked list basic node (data and next)

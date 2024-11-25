@@ -6,13 +6,13 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 11:00:30 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/10/28 11:42:25 by nmonzon          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:43:32 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "../libft.h"
+# include "libft.h"
 
 void	handle_character(int fd, int c, int *retval);
 void	handle_string(int fd, char *s, int *retval);
