@@ -12,11 +12,23 @@
 
 #include "libft.h"
 
-// First we count the ammout of times we encounter a delimiter without
-// counting consecutive ones, to know how many elements our final array has.
-// Then we malloc this new array of strings. Now we loop again and start copying
-// strings into the array slots, malloc each one. If one fails we free the rest.
-// Once fully populated, we fill the last one with NULL and return the array.
+static char	**count_alloc(const char *s, char c);
+static char	*alloc_cpy(char const *start, size_t l);
+static char	**free_memory(char **split_strings, int count);
+static char	**populate_array(char const *s, char c, char **split_strings);
+
+// Split string s into an array of strings based on a delimiter charcater.
+char	**ft_split(char const *s, char c)
+{
+	char		**split_strings;
+
+	if (!s)
+		return (NULL);
+	split_strings = count_alloc(s, c);
+	if (!split_strings)
+		return (NULL);
+	return (populate_array(s, c, split_strings));
+}
 
 // counts ammount of splits, therefore elements and allocates memory to array
 static char	**count_alloc(const char *s, char c)
@@ -91,17 +103,4 @@ static char	**populate_array(char const *s, char c, char **split_strings)
 	}
 	split_strings[total_index] = NULL;
 	return (split_strings);
-}
-
-// Split string s into an array of strings based on the delimiter c
-char	**ft_split(char const *s, char c)
-{
-	char		**split_strings;
-
-	if (!s)
-		return (NULL);
-	split_strings = count_alloc(s, c);
-	if (!split_strings)
-		return (NULL);
-	return (populate_array(s, c, split_strings));
 }
