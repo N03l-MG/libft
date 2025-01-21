@@ -28,6 +28,7 @@ LIST_DIR = $(SRC_DIR)/linked_lists_bonus
 UTIL_DIR = $(SRC_DIR)/utils
 PRINT_DIR = $(SRC_DIR)/ft_fprintf
 GNL_DIR = $(SRC_DIR)/get_next_line
+GC_DIR = $(SRC_DIR)/garbage_collector
 
 ################################################################################
 ###############                    SOURCE FILES                  ###############
@@ -49,6 +50,8 @@ PRINT_SRC = ft_fprintf.c handle_dec.c handle_int.c handle_str.c handle_char.c \
 			handle_hex.c handle_point.c hex_functions.c
 GNL_SRC = get_next_line.c get_next_line_utils.c
 
+GC_SRC = ft_gc.c
+
 BOOL_SRC := $(addprefix $(BOOL_DIR)/, $(BOOL_SRC))
 CONV_SRC := $(addprefix $(CONV_DIR)/, $(CONV_SRC))
 MEM_SRC := $(addprefix $(MEM_DIR)/, $(MEM_SRC))
@@ -57,9 +60,10 @@ LIST_SRC := $(addprefix $(LIST_DIR)/, $(LIST_SRC))
 UTIL_SRC := $(addprefix $(UTIL_DIR)/, $(UTIL_SRC))
 PRINT_SRC := $(addprefix $(PRINT_DIR)/, $(PRINT_SRC))
 GNL_SRC := $(addprefix $(GNL_DIR)/, $(GNL_SRC))
+GC_SRC := $(addprefix $(GC_DIR)/, $(GC_SRC))
 
 ALL_SRC = $(BOOL_SRC) $(CONV_SRC) $(MEM_SRC) $(STR_SRC) $(LIST_SRC) \
-          $(UTIL_SRC) $(PRINT_SRC) $(GNL_SRC)
+          $(UTIL_SRC) $(PRINT_SRC) $(GNL_SRC) $(GC_SRC)
 ALL_OBJ = $(ALL_SRC:.c=.o)
 
 ################################################################################
