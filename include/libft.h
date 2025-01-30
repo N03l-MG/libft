@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:48:54 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/11/25 16:47:02 by nmonzon          ###   ########.fr       */
+/*   Updated: 2025/01/30 15:50:51 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@
 # include <fcntl.h> // File descriptor read flags
 # include <stdbool.h> // Boolean type and true/false
 # include <math.h> // math functions when allowed
-//# include <stdio.h> // For testing - manually enable!
+# include <stdio.h> // printf and other stdio functions (testing)
+
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 // Linked list node
 typedef struct s_list
