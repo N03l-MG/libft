@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 16:44:55 by nmonzon           #+#    #+#             */
-/*   Updated: 2025/01/21 16:57:22 by nmonzon          ###   ########.fr       */
+/*   Updated: 2025/03/12 17:41:19 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 
 // Basic Garbage Collector implementation (makes memory management a breeze)
 
-void	gc_init(t_gc *g_gc)
+t_gc	*get_gc(void)
 {
-	g_gc->head = NULL;
-	g_gc->total_allocations = 0;
-	g_gc->total_memory = 0;
+	static t_gc	gc = {0};
+
+	return (&gc);
 }
+
+t_gc	*gc_init(void)
+{
+	t_gc	*gc;
+
+	gc = get_gc();
+	gc->head = NULL;
+	gc->tail = NULL;
+	gc->size = 0;
+	return (gc);
+}
+
+// TODO: fix everything lol
 
 void	*gc_malloc(size_t size, t_gc *g_gc)
 {
@@ -72,10 +85,11 @@ void	gc_free(void *ptr, t_gc *g_gc)
 	}
 }
 
-void	gc_collect(t_gc *g_gc)
+void	gc_collect()
 {
 	t_gc_node	*current;
 	t_gc_node	*next;
+	t_gc
 
 	current = g_gc->head;
 	while (current)
