@@ -28,9 +28,13 @@ typedef struct s_gc
 	size_t			size;
 }	t_gc;
 
-void	gc_init(t_gc *g_gc);
-void	*gc_malloc(size_t size, t_gc *g_gc);
-void	gc_free(void *ptr, t_gc *g_gc);
-void	gc_collect(t_gc *g_gc);
+t_gc	*get_gc(void);
+t_gc	*gc_init(void);
+void	gc_add(void *ptr);
+void	gc_remove(void *ptr);
+
+void	*gc_malloc(size_t size);
+void	gc_free(void *ptr);
+void	gc_collect(void);
 
 #endif
