@@ -62,7 +62,7 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 	- ft_lstadd_back: Adds a node to the back of a linked list
 	- ft_lstiter: Applies a function `f` passed as a parameter to all nodes in a linked list
 	- ft_lstmap: Creates a new linked list by applying a function `f` to each node's content of an existing linked list. If the allocation of a new node fails, it deletes the content and clears the new list.
-- Writting functions:
+- Writing functions:
 	- ft_putchar_fd: Writes a character `c` to `fd`
 	- ft_putstr_fd: Writes a string `str` to `fd`
 	- ft_putendl_fd: Writes a character `c` to `fd`, terminating with a newline character
