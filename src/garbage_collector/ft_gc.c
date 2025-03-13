@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 16:44:55 by nmonzon           #+#    #+#             */
-/*   Updated: 2025/03/12 17:41:19 by nmonzon          ###   ########.fr       */
+/*   Updated: 2025/03/13 18:04:16 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*gc_malloc(size_t size)
 {
-	t_gc_node	*new_node;
 	void		*ptr;
 
 	ptr = malloc(size);

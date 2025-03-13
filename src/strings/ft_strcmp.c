@@ -1,44 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 12:02:10 by nmonzon           #+#    #+#             */
-/*   Updated: 2025/03/13 18:05:29 by nmonzon          ###   ########.fr       */
+/*   Created: 2025/03/13 18:04:33 by nmonzon           #+#    #+#             */
+/*   Updated: 2025/03/13 18:08:46 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Dupclicates a string by allocating memory to a new one and copying to it.
-
-char	*ft_strcpy(char *dst, const char *src)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
+	while (*s1 && (*s1 == *s2))
 	{
-		dst[i] = src[i];
-		i++;
+		s1++;
+		s2++;
 	}
-	dst[i] = '\0';
-	return (dst);
-}
-
-char	*ft_strdup(const char *s1)
-{
-	size_t	len;
-	char	*dup;
-
-	len = ft_strlen(s1);
-	dup = (char *)malloc(len + 1);
-	if (dup == NULL)
-	{
-		return (NULL);
-	}
-	ft_strcpy(dup, s1);
-	return (dup);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
