@@ -6,7 +6,7 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:48:54 by nmonzon           #+#    #+#             */
-/*   Updated: 2025/01/30 15:50:51 by nmonzon          ###   ########.fr       */
+/*   Updated: 2025/03/13 16:10:07 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 # include "ft_printf.h"
 # include "get_next_line.h"
+# include "ft_gc.h"
 
 // Linked list node
 typedef struct s_list
@@ -93,5 +94,10 @@ int		ft_fprintf(int fd, const char *str, ...);
 
 // get_next_line implementation
 char	*get_next_line(int fd);
+
+// Memory management
+void	*gc_malloc(size_t size);
+void	gc_free(void *ptr);
+void	gc_collect(void);
 
 #endif
