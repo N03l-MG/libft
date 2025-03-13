@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list_node *lst)
+t_list_node	*ft_lstlast(t_list_node *lst)
 {
-	t_list	*last;
+	t_list_node	*last;
 
 	last = NULL;
 	if (!lst)
