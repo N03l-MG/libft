@@ -14,7 +14,7 @@
 
 void	*gc_malloc(size_t size)
 {
-	void		*ptr;
+	void	*ptr;
 
 	ptr = malloc(size);
 	if (!ptr)

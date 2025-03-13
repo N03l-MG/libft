@@ -25,7 +25,7 @@ CONV_DIR = $(SRC_DIR)/conversion
 MEM_DIR = $(SRC_DIR)/memory
 STR_DIR = $(SRC_DIR)/strings
 LIST_DIR = $(SRC_DIR)/linked_lists_bonus
-WRITTING_DIR = $(SRC_DIR)/writting
+WRITING_DIR = $(SRC_DIR)/writing
 PRINT_DIR = $(SRC_DIR)/ft_fprintf
 GNL_DIR = $(SRC_DIR)/get_next_line
 GC_DIR = $(SRC_DIR)/garbage_collector
@@ -44,7 +44,7 @@ STR_SRC = ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c \
 LIST_SRC = ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstmap_bonus.c \
 		   ft_lstadd_front_bonus.c ft_lstiter_bonus.c ft_lstnew_bonus.c \
 		   ft_lstclear_bonus.c ft_lstlast_bonus.c ft_lstsize_bonus.c
-WRITTING_SRC = ft_putchar_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c
+WRITING_SRC = ft_putchar_fd.c ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c
 PRINT_SRC = ft_fprintf.c handle_dec.c handle_int.c handle_str.c handle_char.c \
 			handle_hex.c handle_point.c hex_functions.c
 GNL_SRC = get_next_line.c get_next_line_utils.c
@@ -56,13 +56,13 @@ CONV_SRC := $(addprefix $(CONV_DIR)/, $(CONV_SRC))
 MEM_SRC := $(addprefix $(MEM_DIR)/, $(MEM_SRC))
 STR_SRC := $(addprefix $(STR_DIR)/, $(STR_SRC))
 LIST_SRC := $(addprefix $(LIST_DIR)/, $(LIST_SRC))
-WRITTING_SRC := $(addprefix $(WRITTING_DIR)/, $(WRITTING_SRC))
+WRITING_SRC := $(addprefix $(WRITING_DIR)/, $(WRITING_SRC))
 PRINT_SRC := $(addprefix $(PRINT_DIR)/, $(PRINT_SRC))
 GNL_SRC := $(addprefix $(GNL_DIR)/, $(GNL_SRC))
 GC_SRC := $(addprefix $(GC_DIR)/, $(GC_SRC))
 
 ALL_SRC = $(BOOL_SRC) $(CONV_SRC) $(MEM_SRC) $(STR_SRC) \
-          $(UTIL_SRC) $(PRINT_SRC) $(GNL_SRC) $(GC_SRC) # $(LIST_SRC) broken for now
+          $(UTIL_SRC) $(PRINT_SRC) $(GNL_SRC) $(GC_SRC) $(LIST_SRC)
 ALL_OBJ = $(ALL_SRC:.c=.o)
 
 ################################################################################
