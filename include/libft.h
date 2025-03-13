@@ -6,12 +6,16 @@
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:48:54 by nmonzon           #+#    #+#             */
-/*   Updated: 2025/03/13 18:09:02 by nmonzon          ###   ########.fr       */
+/*   Updated: 2025/03/13 19:05:52 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+		// ~~ LIBRARY / HEADER INCLUDES ~~ //
+
+// C Standard libraries
 # include <stdlib.h> // malloc and free
 # include <unistd.h> // read and write
 # include <limits.h> // MIN_INT and other constants
@@ -22,21 +26,47 @@
 # include <math.h> // math functions when allowed
 # include <stdio.h> // printf and other stdio functions (testing)
 
+// Sub-header includes
 # include "ft_printf.h"
 # include "get_next_line.h"
 # include "ft_gc.h"
 
+		// ~~ CONSTANT DEFINES ~~ //
+
+// ANSI Colors
+# define RED     "\x1b[31m"
+# define GREEN   "\x1b[32m"
+# define YELLOW  "\x1b[33m"
+# define BLUE    "\x1b[34m"
+# define MAGENTA "\x1b[35m"
+# define CYAN    "\x1b[36m"
+// Color reset
+# define RESET   "\x1b[0m"
+
+		// ~~ LINKED LISTS ~~ //
+
 // Linked list node
+typedef struct s_list_node
+{
+	void				*content;
+	struct s_list_node	*next;
+}	t_list_node;
+
 typedef struct s_list
 {
-	void			*content;
-	struct s_list	*next;
-}					t_list;
+	t_list_node	*head;
+	t_list_node	*tail;
+	size_t		size;
+}	t_list;
+
+		// ~~ FUNCTION PROTOTYPES ~~ //
 
 // Conversion functions
 char	*ft_itoa(int n);
 float	ft_atof(char *str);
 int		ft_atoi(const char *str);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 // Memory manipulation functions
 void	ft_bzero(void *s, size_t n);
@@ -77,8 +107,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
 
 // Bonus linked list functions
 t_list	*ft_lstnew(void *content);
@@ -97,7 +125,7 @@ int		ft_fprintf(int fd, const char *str, ...);
 // get_next_line implementation
 char	*get_next_line(int fd);
 
-// Memory management
+// ft_gc garbage collection functions
 void	*gc_malloc(size_t size);
 void	gc_free(void *ptr);
 void	gc_collect(void);
