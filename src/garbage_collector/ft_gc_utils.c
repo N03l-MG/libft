@@ -39,7 +39,7 @@ void	gc_add(void *ptr)
 	gc = get_gc();
 	new_node = (t_gc_node *)malloc(sizeof(t_gc_node));
 	if (!new_node)
-		return (NULL);
+		return ;
 	new_node->ptr = ptr;
 	if (!gc->head)
 	{
