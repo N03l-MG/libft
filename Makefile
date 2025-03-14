@@ -40,7 +40,7 @@ MEM_SRC = ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.
 		  ft_memset.c
 STR_SRC = ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c \
 		  ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c \
-		  ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c
+		  ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_strcmp.c ft_strndup.c
 LIST_SRC = ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstmap_bonus.c \
 		   ft_lstadd_front_bonus.c ft_lstiter_bonus.c ft_lstnew_bonus.c \
 		   ft_lstclear_bonus.c ft_lstlast_bonus.c ft_lstsize_bonus.c
@@ -49,7 +49,7 @@ PRINT_SRC = ft_fprintf.c handle_dec.c handle_int.c handle_str.c handle_char.c \
 			handle_hex.c handle_point.c hex_functions.c
 GNL_SRC = get_next_line.c get_next_line_utils.c
 
-GC_SRC = ft_gc.c
+GC_SRC = ft_gc.c ft_gc_utils.c
 
 BOOL_SRC := $(addprefix $(BOOL_DIR)/, $(BOOL_SRC))
 CONV_SRC := $(addprefix $(CONV_DIR)/, $(CONV_SRC))
