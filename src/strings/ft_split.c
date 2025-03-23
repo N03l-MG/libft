@@ -45,7 +45,7 @@ static char	**count_alloc(const char *s, char c)
 			counter++;
 		i++;
 	}
-	split_strings = (char **)malloc(sizeof(char *) * (counter + 1));
+	split_strings = (char **)gc_malloc(sizeof(char *) * (counter + 1));
 	if (!split_strings)
 		return (NULL);
 	return (split_strings);
@@ -56,7 +56,7 @@ static char	*alloc_cpy(char const *start, size_t l)
 {
 	char	*current_string;
 
-	current_string = (char *)malloc(l + 1);
+	current_string = (char *)gc_malloc(l + 1);
 	if (!current_string)
 		return (NULL);
 	ft_strlcpy(current_string, start, l + 1);
@@ -72,10 +72,10 @@ static char	**free_memory(char **split_strings, int count)
 	i = 0;
 	while (i < count)
 	{
-		free(split_strings[i]);
+		gc_free(split_strings[i]);
 		i++;
 	}
-	free(split_strings);
+	gc_free(split_strings);
 	return (NULL);
 }
 

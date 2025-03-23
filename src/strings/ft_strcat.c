@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmonzon <nmonzon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 11:59:53 by nmonzon           #+#    #+#             */
-/*   Updated: 2024/11/25 16:43:32 by nmonzon          ###   ########.fr       */
+/*   Created: 2025/23/03 15:40:50 by nmonzon           #+#    #+#             */
+/*   Updated: 2025/23/03 15:43:32 by nmonzon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Checks if c is within the ascii range digits
-
-bool	ft_isdigit(int c)
+char	*ft_strcat(char *dest, const char *src)
 {
-	if (c == '\0')
-		return (false);
-	if (c >= 48 && c <= 57)
-		return (true);
-	return (false);
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
+		i++;
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

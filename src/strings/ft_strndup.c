@@ -20,7 +20,7 @@ char	*ft_strndup(const char *s, size_t n)
 	len = ft_strlen(s);
 	if (len > n)
 		len = n;
-	result = malloc(len + 1);
+	result = gc_malloc(len + 1);
 	if (!result)
 		return (NULL);
 	ft_strlcpy(result, s, len + 1);

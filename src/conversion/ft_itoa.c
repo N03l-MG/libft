@@ -40,7 +40,7 @@ static char	*handle_min(void)
 {
 	char	*s;
 
-	s = (char *)malloc(12);
+	s = (char *)gc_malloc(12);
 	if (!s)
 		return (NULL);
 	ft_strlcpy(s, "-2147483648", 12);
@@ -57,7 +57,7 @@ char	*ft_itoa(int n)
 		return (handle_min());
 	neg = (n < 0);
 	l = count_digits(n);
-	s = (char *)malloc(l + 1);
+	s = (char *)gc_malloc(l + 1);
 	if (!s)
 		return (NULL);
 	s[l] = '\0';

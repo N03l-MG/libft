@@ -101,7 +101,7 @@ static int	check_errors(t_buffer *bs, char **line)
 	if (bs->bytes_read == (unsigned long)-1
 		|| (*line && ft_strlen(*line) == 0) || !*line)
 	{
-		free(*line);
+		gc_free(*line);
 		*line = NULL;
 		clear_buffer(bs);
 		bs->i = 0;

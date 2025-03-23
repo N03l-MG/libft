@@ -34,23 +34,23 @@ char	*join_range(char *s1, char *s2, size_t start, size_t end)
 
 	if (!s1)
 	{
-		s1 = (char *)malloc(1);
+		s1 = (char *)gc_malloc(1);
 		if (!s1)
 			return (NULL);
 		s1[0] = '\0';
 	}
 	l = ft_strlen(s1) + (end - start);
-	s_joined = (char *)malloc(l + 1);
+	s_joined = (char *)gc_malloc(l + 1);
 	if (!s_joined)
 	{
-		free(s1);
+		gc_free(s1);
 		s1 = NULL;
 		return (NULL);
 	}
 	s_joined[0] = '\0';
 	cat_range(s_joined, s1, 0, ft_strlen(s1));
 	cat_range(s_joined, s2, start, end);
-	free(s1);
+	gc_free(s1);
 	s1 = NULL;
 	return (s_joined);
 }
