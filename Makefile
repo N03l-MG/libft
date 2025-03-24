@@ -38,8 +38,8 @@ BOOL_SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c
 CONV_SRC = ft_atof.c ft_atoi.c ft_itoa.c ft_toupper.c ft_tolower.c
 MEM_SRC = ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c \
 		  ft_memset.c
-STR_SRC = ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c \
-		  ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c \
+STR_SRC = ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c ft_strcpy.c \
+		  ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_strcat.c \
 		  ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_strcmp.c ft_strndup.c
 LIST_SRC = ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstmap_bonus.c \
 		   ft_lstadd_front_bonus.c ft_lstiter_bonus.c ft_lstnew_bonus.c \
@@ -72,7 +72,7 @@ ALL_OBJ = $(ALL_SRC:.c=.o)
 all: message $(NAME)
 
 message:
-	@echo "Compiling libft..."
+	@echo "Compiling libft"
 
 $(NAME): $(ALL_OBJ)
 	@ar rc $(NAME) $(ALL_OBJ)
@@ -84,7 +84,7 @@ $(NAME): $(ALL_OBJ)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@echo "Cleaning library object files..."
+	@echo "Cleaning library object files"
 	@rm -f $(ALL_OBJ)
 	@echo "Object files cleaned!"
 
