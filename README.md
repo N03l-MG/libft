@@ -17,7 +17,7 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 - math: The C math library with constant like "PI" and tons of operations.
 
 ### Functions
-
+**!**: _Functions with this indicator allocate memory but do not free it for you, therefore they are integrated with the garbage collector._
 - Memory manipulation:
 	- ft_bzero: Zeros out specified memory
 	- ft_memchr: Locates and returns the adress of the character `c` in string `s`
@@ -30,15 +30,17 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 	- ft_strchr: Returns a string poiting to the first appereace of the character `c` in string `s`
 	- ft_strrchr: Reversed version of *ft_strchr*
 	- ft_strnstr: Returns `haystack` pointing to the first occurance of `needle` in it up to the length `len`
-	- ft_substr: Copies a specified substring from a string into a new one with *ft_strdup*
-	- ft_strtrim: Trims `set` string off the start and end of string `s1`
+	- ft_substr **!**: Copies a specified substring from a string into a new one with *ft_strdup*
+	- ft_strtrim **!**: Trims `set` string off the start and end of string `s1`
+	- ft_strcpy: Compies the contents of string `s1` and replaces `s2` with it, then returns `s2`
 	- ft_strlcpy: Returns the resultant length of copying `src` to `dst`, truncated by `dstsize`
-	- ft_strlcat: Resturns the resultant length of concatenation `dst` with `src`, truncated by `dstsize`
-	- ft_strdup: Dupclicates a string by allocating memory to a new one and copying to said address
-	- ft_strjoin: Uses concatenation to add a string onto the end of another
+	- ft_strcat: Resturns the resultant concatenation of `dst` with `src`, adding on it `dst`
+	- ft_strlcat: Returns the resultant length of concatenating `dst` with `src`, truncated by `dstsize`
+	- ft_strdup **!**: Dupclicates a string by allocating memory to a new one and copying to said address
+	- ft_strjoin **!**: Uses concatenation to add a string onto the end of another
 	- ft_strncmp: Returns the differnce in ascii between the first differing charater of `s1` and `s2`, up to `n`
 	- ft_strlen: Returns the length of a given string
-	- ft_split: Splits string `str` by delimiter character `c` (not including) and returns an array of the split strings
+	- ft_split **!**: Splits string `str` by delimiter character `c` (not including) and returns an array of the split strings
 	- ft_striteri: Applies a function `f` passed as a parameter to string `s` 
 	- ft_strmapi: Identical to *ft_striteri* but returns the string after the function is applied to it
 - Conversion functions:
@@ -69,7 +71,7 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 	- ft_putnbr_fd: Writes a number `nbr` to `fd`
 - Sub-Project functions: 
 	- ft_fprintf: Custom reimplementation of fprintf made from my ft_printf project, prints formated string to `fd`
-	- get_next_line: My get_next_line project (very improvable), returns the next line read from `fd`
+	- get_next_line **!**: My get_next_line project (very improvable), returns the next line read from `fd`
 	- gc_malloc: Calls malloc and adds a node with a reference to the allocated pointer to the garbage collector list
 	- gc_free: Frees the specified pointer and removes its node from the garbage collector list
 	- gc_collect: Frees all remaining allocations in the garbage collector list
@@ -77,5 +79,5 @@ It contains all of the functions in the *mandatory and bonus* parts of the libft
 ### Garbage Collector
 This libft constains a garbage collection system which replaces and malloc and free functions and uses a linked list to keep track of pointers to allocated memory. The `gc_collect()` function then frees everything off. The list functions like a stack, with a first-in-last-out logic.
 
-### Linked Lists (functions currently out-of-date!)
+### Linked Lists
 All structs related to linked lists are also included so that they can easily be created. Will add more linked list related utils in the future!

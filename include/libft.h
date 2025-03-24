@@ -119,7 +119,8 @@ void		ft_lstadd_back(t_list_node **lst, t_list_node *new);
 void		ft_lstdelone(t_list_node *lst, void (*del)(void *));
 void		ft_lstclear(t_list_node **lst, void (*del)(void *));
 void		ft_lstiter(t_list_node *lst, void (*f)(void *));
-t_list_node	*ft_lstmap(t_list_node *lst, void *(*f)(void *), void (*del)(void *));
+t_list_node	*ft_lstmap(t_list_node *lst, void *(*f)(void *),
+				void (*del)(void *));
 
 // ft_fprintf implementation (used to be only printf)
 int			ft_fprintf(int fd, const char *str, ...);
