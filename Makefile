@@ -3,7 +3,7 @@
 #                                    MAKEFILE                                  #
 # Project:     libft/ft_printf/get_next_line                                   #
 # Created:     07/10/2024                                                      #
-# Author:      Noel Monzon (nmonzon)                                           #
+# Author:      kixik                                                           #
 #                                                                              #
 ################################################################################
 
